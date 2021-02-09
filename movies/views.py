@@ -8,3 +8,8 @@ from .models import Movie
 def index(request):
     movies = Movie.objects.all()
     return render(request, 'movies/index.html', {'movies': movies})
+
+
+def detail(request, movieid):
+    details = Movie.objects.get(pk=movieid)
+    return render(request, "movies/detail.html", {"details": details})
