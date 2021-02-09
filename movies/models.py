@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -13,3 +14,4 @@ class Movie(models.Model):
     rating = models.FloatField()
     stock_available = models.IntegerField()
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    date_created = models.DateField(default=timezone.now)
