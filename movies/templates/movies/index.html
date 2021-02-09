@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>S.NO</th>
+            <th>TITLE</th>
+            <th>GENRE</th>
+            <th>RATING</th>
+            <th>YEAR</th>
+        </tr>
+    </thead>
+
+    <tfoot>
+        {% for movie in movies %}
+        <tr>
+            <td>{{movie.id}}</td>
+            <td>{{movie.title}}</td>
+            <td>{{movie.genre}}</td>
+            <td>{{movie.rating}}</td>
+            <td>{{movie.year}}</td>
+        </tr>
+    </tfoot>
+    {% endfor %}
+</table>
+{% endblock content %}

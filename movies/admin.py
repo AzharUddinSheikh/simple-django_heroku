@@ -8,6 +8,7 @@ class GenreAdmin(admin.ModelAdmin):
 
 class MovieAdmin(admin.ModelAdmin):
     list_display = ("id", 'title', 'genre', 'rating', 'year')
+    exclude = ('date_created',)
 
 
 # Register your models here.
